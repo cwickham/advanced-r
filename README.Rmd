@@ -3,10 +3,7 @@ title: Advanced R
 date: July 2018
 author: Charlotte Wickham
 output:
-  pdf_document: 
-    includes:
-      in_header: header.tex
-  html_document: default
+  github_document: default
 ---
 
 ## Overview
