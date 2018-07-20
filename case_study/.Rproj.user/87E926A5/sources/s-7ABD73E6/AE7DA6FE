@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1532034938220.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "AE7DA6FE",
+    "lastKnownWriteTime" : 1532114978,
+    "last_content_update" : 1532114978566,
+    "path" : "~/Documents/Projects/advanced-r/case_study/01-report.R",
+    "project_path" : "01-report.R",
+    "properties" : {
+        "cursorPosition" : "127,57",
+        "scrollLine" : "94"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

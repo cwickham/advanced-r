@@ -1,0 +1,85 @@
+library(tidyverse)
+library(fs)
+
+# Get file names and paths to data
+files <- dir("data") %>% path_ext_remove()
+file_paths <- path("data", files, ext = "csv")
+states <- str_sub(files, 1, 2)
+  
+# Check data isn't too old -----------------------------------------------
+
+file_date <- function(path){
+  path %>%
+    str_extract("[0-9]{4}-[0-9]{2}-[0-9]{2}") %>%
+    parse_date()
+}
+
+file_age <- function(path){
+  difftime(lubridate::today(), file_date(path), units = "days")
+}
+
+check_not_outdated <- function(path, threshold_days = 30){
+  age <- file_age(path)
+  old <- age > threshold_days
+  
+  if(any(old)){
+    old_files <- paste(path[old], "is", age[old], "days old", collapse = ", \n* ")
+    stop(paste("Some files are outdated: \n*", old_files), call. = FALSE)
+  }
+  message("No files are outdated")
+  invisible(age)
+}
+
+ages <- check_not_outdated(file_paths)
+
+# Import all files --------------------------------------------------------
+
+all_sales <- map(file_paths, read_csv) %>% set_names(states)
+
+# Create weekly averages --------------------------------------------------
+
+average_by_week <- function(data, date, value, group){
+  date <- enquo(date)
+  value <- enquo(value)
+  group <- enquo(group)
+  
+  data %>% 
+    mutate(week = lubridate::week(!!date)) %>%
+    group_by(!!group, week) %>%
+    summarise(
+      date = first(!!date),
+      n = sum(!is.na(!!value)),
+      mean = mean(!!value, na.rm = TRUE))  
+}  
+
+avg_n_sales <- map(all_sales, average_by_week, 
+  date = date, value = n_sales, group = type)
+
+# Plot weekly averages ----------------------------------------------------
+
+plot_over_time <- function(data, date, value, group){
+  date <- enquo(date)
+  value <- enquo(value)
+  group <- enquo(group)
+  
+  data %>% 
+    ggplot(aes(!!date, !!value, color = !!group)) + 
+    geom_point(size = 3) +
+    geom_line(alpha = 0.5) + 
+    labs(title = "Oregon", 
+      x = "Week starting",
+      y = "Average number of sales per day") +
+    theme_bw() +
+    scale_color_brewer(type = "qual")
+}
+  
+# Export plots ------------------------------------------------------------
+
+image_path <- path("images", paste(or_file, "n_sales", sep = "_"))
+
+ggsave_multiple <- function(fileroot, plot = last_plot(), exts = c(".png", ".pdf"), ...){
+  paths <- paste0(fileroot, exts)
+  walk(paths, ggsave, plot = plot, ...)
+}
+
+ggsave_multiple(image_path, height = 3, width = 8)

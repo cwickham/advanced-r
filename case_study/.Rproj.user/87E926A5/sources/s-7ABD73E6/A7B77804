@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1532119731680.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A7B77804",
+    "lastKnownWriteTime" : 1532119871,
+    "last_content_update" : 1532119871945,
+    "path" : "~/Documents/Projects/advanced-r/case_study/functions.R",
+    "project_path" : "functions.R",
+    "properties" : {
+        "cursorPosition" : "0,57",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,10 @@
+> sales
+# A tibble: 3 x 9
+  files         file_paths             states states_long_names ages  
+  <fs::path>    <fs::path>             <chr>  <chr>             <time>
+1 BC_2018-07-14 data/BC_2018-07-14.csv BC     British Columbia  6     
+2 OR_2018-07-15 data/OR_2018-07-15.csv OR     Oregon            5     
+3 WA_2018-07-18 data/WA_2018-07-18.csv WA     Washington        2     
+# ... with 4 more variables: data <list>, weekly_n_sales <list>,
+#   n_sales_weekly_plot <list>, image_paths <fs::path>
+> 
