@@ -82,6 +82,22 @@ If you often work on a network drive, it is worth verifying you can load the abo
 
 If you have any problems with the setup, please come a little early and we'll help you get configured.
 
+Getting the materials
+---------------------
+
+To download the materials, open RStudio and on the Console run:
+
+``` r
+usethis::use_course("bit.ly/advr-jul18")
+```
+
+After a pause, you'll be asked a few questions about the download process. The materials will be downloaded, unzipped to your Desktop, and a new RStudio session will open.
+
+You only need to do this once. If you close RStudio, and want to pick it up again later (i.e. on the day of the training):
+
+1.  Navigate to where the folder was downloaded (this should be a folder called `advanced-r-master` on your **Desktop**)
+2.  Double-click the file `advanced-r.Rproj` to open up RStudio
+
 Instructor Details
 ------------------
 

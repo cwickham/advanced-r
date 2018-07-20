@@ -73,12 +73,25 @@ tidyverse::tidyverse_update()
 ```
 to identify any out-of-date packages, and follow the instructions to update them.
 
-
 If you use RStudio, please make sure you have RStudio 1.1, which you can download from https://www.rstudio.com/products/rstudio/download/#download
 
 If you often work on a network drive, it is worth verifying you can load the above packages when you are not connected to the internet, just in case there are wifi problems on the day.
 
 If you have any problems with the setup, please come a little early and we'll help you get configured.     
+
+## Getting the materials
+
+To download the materials, open RStudio and on the Console run:
+```{r, eval = FALSE}
+usethis::use_course("bit.ly/advr-jul18")
+```
+
+After a pause, you'll be asked a few questions about the download process. The materials will be downloaded, unzipped to your Desktop, and a new RStudio session will open.  
+
+You only need to do this once.  If you close RStudio, and want to pick it up again later (i.e. on the day of the training):
+
+1. Navigate to where the folder was downloaded (this should be a folder called `advanced-r-master` on your **Desktop**)
+2. Double-click the file `advanced-r.Rproj` to open up RStudio
 
 ## Instructor Details
 
