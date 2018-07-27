@@ -88,7 +88,7 @@ Getting the materials
 To download the materials, open RStudio and on the Console run:
 
 ``` r
-usethis::use_course("bit.ly/advr-jul18")
+usethis::use_course("github.com/cwickham/advanced-r/archive/v1.0.zip")
 ```
 
 After a pause, you'll be asked a few questions about the download process. The materials will be downloaded, unzipped to your Desktop, and a new RStudio session will open.
