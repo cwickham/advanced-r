@@ -67,7 +67,7 @@ The course is hands on, so you'll need **a laptop with a recent version of R**. 
 ```{r, eval = FALSE}
 install.packages(c(
   "usethis", "rlang", "devtools",
-  "tidyverse", "fs"
+  "tidyverse", "fs", "nycflights13"
 ))
 
 devtools::install_github("r-lib/lobstr")
