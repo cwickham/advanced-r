@@ -6,6 +6,12 @@ output:
   github_document: default
 ---
 
+This repo currently reflects a version delivered at the JSM July 2018, Vancouver, BC.
+
+Older versions include:
+
+* [July 2018 at BC Stats, Victoria, BC](https://github.com/cwickham/advanced-r/tree/v1.0)
+
 ## Overview
 
 Move from using other peoples' functions to writing your own! This course focuses on some of the key programming techniques in R that will move you to the next level.

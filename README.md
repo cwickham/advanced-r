@@ -3,6 +3,12 @@ Advanced R
 Charlotte Wickham
 July 2018
 
+This repo currently reflects a version delivered at the JSM July 2018, Vancouver, BC.
+
+Older versions include:
+
+-   [July 2018 at BC Stats, Victoria, BC](https://github.com/cwickham/advanced-r/tree/v1.0)
+
 Overview
 --------
 
